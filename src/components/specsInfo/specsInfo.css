@@ -1,0 +1,108 @@
+.page-wrapper {
+    background-color: white;
+    width: 100%;
+}
+
+.specs-info {
+    max-width: 1390px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+.page-aside {
+    width: 100%;
+    flex-basis: 20%;
+    border-right: 8px solid #F3F3F3;
+    border-bottom: 8px solid #F3F3F3;
+}
+
+.aside-menu {
+    margin: 15px 0 25px;
+}
+
+.page-content {
+    width: 70%;
+    flex-basis: 70%;
+}
+
+.page-block {
+    border-bottom: 8px solid #F3F3F3;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.subg__list {
+    padding-left: 20px;
+}
+
+.subg__list__el {
+    margin-bottom: 5px;
+}
+
+.doc-link {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.doc-link:hover {
+    color: rgb(11, 11, 83);
+}
+
+.student-publ {
+    display: none;
+}
+
+.btn-show {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    font-size: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.spec-intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spec-hello {
+    width: 60%;
+    position: relative;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.spec-hello::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+    border-top: 5px solid green;
+    border-left: 5px solid green; 
+}
+
+.spec-hello::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    border-bottom: 5px solid green;
+    border-right: 5px solid green; 
+}
+
+.spec-ruk {
+    width: 30%;
+}

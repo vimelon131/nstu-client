@@ -1,0 +1,126 @@
+@import url("./fonts/stylesheet.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F3F3F3;
+    font-family: 'Stem';
+    overflow-x: hidden;
+}
+
+#root {
+}
+
+.App {
+    min-height: 100vh;
+    width: 100%;
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.container-main {
+    max-width: 1000px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    background-color: white;
+    padding: 15px;
+}
+
+.content {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.page-wrap {
+}
+
+.person-block {
+    min-width: 800px;
+    margin: 0 auto 30px;
+    min-height: 350px;
+    border: 1px solid black;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+}
+
+.page__title {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.page__desc {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.btn-show {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    font-size: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.sidebar__el {
+    margin: 5px 0px;
+    
+}
+
+.sidebar__link {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    background-color: #00D777;
+    color: white;
+}
+
+.page-wrapper {
+    background-color: white;
+    width: 100%;
+}
+
+.specs-info {
+    max-width: 1390px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+.page-aside {
+    width: 100%;
+    flex-basis: 20%;
+    border-right: 8px solid #F3F3F3;
+    border-bottom: 8px solid #F3F3F3;
+}
+
+.aside-menu {
+    margin: 15px 0 25px;
+}
+
+.page-content {
+    width: 70%;
+    flex-basis: 70%;
+}

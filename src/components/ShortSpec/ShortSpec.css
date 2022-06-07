@@ -1,0 +1,80 @@
+.short-spec {
+    max-width: 800px;
+    background-color: #FFF;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid black;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);;
+}
+
+.short-spec__title {
+    width: 95%;
+    background-color: #1D6952;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 5px 25px;
+    margin-left: -25px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.short-spec__title:after {
+    width: 0;
+    height: 0;
+    border-bottom: 80px solid white;
+    border-left: 50px solid transparent;
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: 0px;
+}
+
+.short-spec__content {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.short-spec__descr {
+    width: 70%;
+    font-weight: 300;
+}
+
+.short-spec__info {
+    font-weight: bold;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.short-spec__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon__info {
+    display: block;
+}
+
+.short-spec__more {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.short-spec__more:hover {
+    background-color: #1D6952;
+    color: white;
+    font-weight: bold;
+}
+
+.spec-link {
+    text-decoration: none;
+    color: white;
+}
+
+.spec-link:hover {
+    color: rgb(194, 189, 189);
+}

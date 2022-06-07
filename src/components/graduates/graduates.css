@@ -1,0 +1,71 @@
+.graduate__top {
+    display: flex;
+}
+
+.graduate_field {
+    
+}
+.graduate__info {
+    width: 70%;
+}
+
+.graduate__img {
+    width: 30%;
+}
+
+.graduate__info_field {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.field__name {
+    width: 30%;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.field__value {
+    font-weight: 500;
+    font-size: 20px;
+    width: 70%;
+}
+
+.fio {
+    background-color: #18C77A;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    margin-right: -25px;
+    padding: 2px 50px;
+    position: relative;
+}
+.fio:before {
+    width: 0;
+    height: 0;
+    border-top: 40px solid white;
+    border-right: 40px solid transparent;
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+}
+
+.graduate__bottom {
+    font-weight: 300;
+    font-size: 18px;
+    display: none;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.btn-show {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    font-size: 20px;
+}
+
+.show {
+    display: block;
+}

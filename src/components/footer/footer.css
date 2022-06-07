@@ -1,0 +1,22 @@
+.footer {
+    width: 100%;
+    min-height: 100px;
+    background-color: #326670;
+    margin-bottom: 0;
+    
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer_contact {
+    
+    margin-bottom: 20px;
+}
+
+.footer_socials {
+    margin-top: 20px;
+}

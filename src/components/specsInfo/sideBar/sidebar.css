@@ -1,0 +1,24 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.sidebar__el {
+    margin: 5px 0px;
+    
+}
+
+.sidebar__link {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    background-color: #00D777;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.news_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.news-one {
+    width: auto;
+    height: 288px;
+    background-size: cover;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.news-title {
+    font-size: 28px;
+    margin: 10px;
+}
+
+.news-date, .news-categ {
+    font-weight: 300;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.news-content {
+    font-weight: 300;
+}
