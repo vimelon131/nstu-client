@@ -16,7 +16,7 @@ const Teacher = ({teacher}) => {
                         {teacher.jobTitle}
                     </div>
                     <div style={{marginBottom: "80px"}} className="teacher__job">
-                        Персональный сайт: <a href={teacher.url}>сайт</a>
+                        Персональный сайт: <a style={{color: "#326670"}} href={teacher.url}>сайт</a>
                     </div>
                     <div className="teacher__job">
                         Преподаваемые дисциплины:

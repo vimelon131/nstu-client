@@ -12,7 +12,7 @@ const Navbar = () => {
         {name: 'Новости', path: "/news"},
         {name: 'Выпускники', path: "/graduates"},
         {name: 'Вопросы и ответы', path: "/questions"},
-        {name: 'Преподователи', path: "/teachers"},
+        {name: 'Преподаватели', path: "/teachers"},
     ];
     return (
         <div className='nav'>

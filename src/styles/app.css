@@ -124,3 +124,40 @@ body {
     width: 70%;
     flex-basis: 70%;
 }
+
+.btn-action {
+    background-color: #00D777;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+.btn-neutral {
+    background-color: rgb(197, 193, 193);
+    color: black;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 5px;
+    padding: 2px 5px;
+}
+
+.error {
+    display: none;
+    color: red;
+}
+
+.delete {
+    color: red;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.news-edit {
+    margin: 20px;
+    font-size: 20px;
+}

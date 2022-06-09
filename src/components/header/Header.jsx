@@ -22,8 +22,8 @@ const Header = () => {
                             <a href="phone:+73833460231" className="contacts_phone">+7 (383) 346-02-31 </a>
                         </div>
                         <div className="socials">
-                            <img style={{marginRight: "10px"}} src={vkicon} alt="" />
-                            <img src={yticon} alt="" />
+                            <a target="_blank" href="https://vk.com/nstu_vk"><img style={{marginRight: "10px"}} src={vkicon} alt="" /></a>
+                            <a target="_blank" href="https://www.youtube.com/c/VideoNSTU"><img src={yticon} alt="" /></a>
                         </div>
                     </div>
                 </div>

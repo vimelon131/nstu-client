@@ -2,10 +2,17 @@
 import React from 'react'
 import { Outlet, useParams} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getSpec } from '../../actions/spec';
 
 const Subjects = () => {
     let params = useParams();
+    const dispatch = useDispatch();
     const spec = useSelector(state => state.spec.specs).filter(el => el._id === params.specID)[0];
+    useEffect(() => {
+        if (spec.length == 0)
+            dispatch(getSpec());
+    });
     return (
         <div className='page-content'>
             <div className="page-block">

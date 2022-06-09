@@ -12,15 +12,14 @@ const Footer = () => {
                 <div className="footer-info">
                     <div className="footer_contact">
                         <p>© НГТУ Магистратура кафедры АСУ, 2022</p>
-                        
                         <p>Адрес НГТУ: <br /> Россия, 630073, г. Новосибирск, пр-т К.Маркса, 20</p> 
-                        <a style={{color: "white"}} href="">Официальный сайт НГТУ</a>
+                        <a target="_blank" style={{color: "white",fontWeight:"400"}} href="https://www.nstu.ru/">Официальный сайт НГТУ</a>
                         <p>Расположение кафедры АСУ:<br />7 корпус, ул. Немирова-Данченко, д.136, к. 811</p>
-                        <a href="mailto:kafedra@asu.cs.nstu.ru">kafedra@asu.cs.nstu.ru</a>
+                        <a style={{color: "white",fontWeight:"400"}} href="mailto:kafedra@asu.cs.nstu.ru">kafedra@asu.cs.nstu.ru</a>
                     </div>
                     <div className="footer_socials">
-                        <img style={{marginRight: "10px"}} src={vkicon} alt="" />
-                        <img src={yticon} alt="" />
+                        <a target="_blank" href="https://vk.com/nstu_vk"><img style={{marginRight: "10px"}} src={vkicon} alt="" /></a>
+                        <a target="_blank" href="https://www.youtube.com/c/VideoNSTU"><img src={yticon} alt="" /></a>
                         <p>Приемная коммисия: <br /> <a href="mailto:pk@nstu.ru" style={{color: "white",textDecoration: "none", fontWeight: "300"}}>pk@nstu, </a>
                             <a href="phone:+73833460231" style={{color: "white", textDecoration: "none", fontWeight: "300"}}>+7 (383) 346-02-31 </a></p>
                         <p>Кафедра АСУ:</p>

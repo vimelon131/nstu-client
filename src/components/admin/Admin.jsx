@@ -11,8 +11,11 @@ const Admin = () => {
                         <div className="aside-menu">
                             <SideBarA />
                         </div>
-                    </div>   
-                    <Outlet />
+                    </div> 
+                    <div className="page-content">
+                        <Outlet />
+                    </div>  
+                    
                 </div>
         </div>
     )

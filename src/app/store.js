@@ -5,6 +5,7 @@ import teachersReducer from "../reducers/teachersReducer.js";
 import graduatesReducer from '../reducers/graduateReducer.js';
 import questoinsReducer from '../reducers/questionReducer.js';
 import newsReducer from '../reducers/newsReducer.js';
+import keywordsReducer from '../reducers/keywordsReducer.js';
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     graduates: graduatesReducer,
     questions: questoinsReducer,
     news: newsReducer,
+    keywords: keywordsReducer,
   },
 });

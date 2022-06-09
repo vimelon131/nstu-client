@@ -8,7 +8,7 @@ import stripe from "../../assets/stripe-h.png"
 
 const Main = () => {
     const dispatch = useDispatch();
-    const specs = useSelector(state => state.spec.specs).map(spec => <ShortSpec key={spec._id} spec={spec}/>);
+    const specs = useSelector(state => state.spec.specs).map(spec => spec.trace ? <ShortSpec key={spec._id} spec={spec}/> : null);
 
     useEffect(() => {
         if (specs.length == 0)

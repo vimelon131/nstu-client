@@ -62,8 +62,9 @@
 .btn-show {
     background-color: transparent;
     border: none;
-    color: blue;
     font-size: 20px;
+    color: #326670;
+    text-decoration: underline;
 }
 
 .show {
