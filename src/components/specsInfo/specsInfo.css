@@ -45,7 +45,8 @@
 .doc-link {
     display: block;
     font-size: 16px;
-    text-decoration: none;
+    text-decoration: underline;
+    color: #326670;
     font-weight: 600;
     margin: 5px 0;
 }

@@ -53,6 +53,7 @@ body {
     font-size: 40px;
     margin: 0;
     margin-bottom: 10px;
+    color: black;
 }
 
 .page__desc {
@@ -143,6 +144,16 @@ body {
     font-size: 20px;
     margin: 5px;
     padding: 2px 5px;
+}
+
+.btn-cancel {
+    background-color: red;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
 }
 
 .error {

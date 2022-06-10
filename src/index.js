@@ -26,6 +26,11 @@ import SpecEdit from './components/admin/specsList/SpecEdit';
 import EditTeacher from './components/admin/teachersList/EditTeacher';
 import AddTeacher from './components/admin/teachersList/AddTeacher';
 import AddKeyword from './components/admin/newsList/addKeyword';
+import QuestionsA from './components/admin/QuestionsA';
+import EditQuestion from './components/admin/questionList/EditQuestion';
+import EditGraduate from './components/admin/graduatesList/EditGraduate';
+import AddQuestion from './components/admin/questionList/AddQuestion';
+import AddGraduate from './components/admin/graduatesList/AddGraduate';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -52,13 +57,16 @@ root.render(
             <Route path="teachers" element={<Teachers />} />
             <Route path="manage/admin" element={<Admin />} >
               <Route path="speciality" element={<SpecialityA />} />
-              <Route path="news" element={<NewsA />} >
-                
-              </Route>
+              <Route path="news" element={<NewsA />} />
+              <Route path="questions" element={<QuestionsA />} />
               <Route path="news/add" element={<AddNews />} />
+              <Route path="questions/add" element={<AddQuestion />} />
               <Route path="teachers/add" element={<AddTeacher />} />
               <Route path="news/addKeyword" element={<AddKeyword />} />
               <Route path="news/edit/:newsID" element={<EditNews />} />
+              <Route path="graduates/edit/:graduateID" element={<EditGraduate />} />
+              <Route path="graduates/add" element={<AddGraduate />} />
+              <Route path="questions/edit/:questionID" element={<EditQuestion />} />
               <Route path="teachers/edit/:teacherID" element={<EditTeacher />} />
               <Route path="speciality/edit/:specID" element={<SpecEdit />} />
               <Route path="graduates" element={<GraduatesA />} />

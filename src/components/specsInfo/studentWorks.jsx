@@ -7,7 +7,12 @@ import { useState } from 'react';
 
 const StudentWorks = () => {
     let params = useParams();
+    const dispatch = useDispatch();
     const spec = useSelector(state => state.spec.specs).filter(el => el._id === params.specID)[0];
+    useEffect(() => {
+        if (spec.length == 0)
+            dispatch(getSpec());
+    });
     const rootClasses = ["student-publ"];
     const [visible, setVisible]  = useState(false);
     if (visible) {
@@ -26,7 +31,7 @@ const StudentWorks = () => {
             </div>
             <div className="page-block">
                 <h2 style={{marginTop: 0,display: "inline-block"}}>Публикации студентов:</h2>
-                <button onClick={showAll} className="btn-show">показать все</button>
+                <button onClick={showAll} className="btn-show">{!visible ? "показать все" : "скрыть"}</button>
                 <div className={rootClasses.join(' ')}>
                     <ul style={{paddingLeft: "70px", marginTop: "0px"}}>
                         {spec.studentPublications.map(el => <li>{el}</li>)}

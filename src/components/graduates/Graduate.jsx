@@ -1,9 +1,12 @@
 import React from 'react'
 import "./graduates.css"
 import { useState } from 'react';
+import { API_URL } from '../../config';
+import user from "../../assets/user.png"
 
 const Graduate = ({graduate}) => {
     const rootClasses = ["graduate__bottom"];
+    const imgsrc = graduate.img?.includes('public') ? `https://www.nstu.ru/${graduate.img}` : `${API_URL}${graduate.img}` 
     const [visible, setVisible]  = useState(false);
     if (visible) {
         rootClasses.push("show");
@@ -15,7 +18,7 @@ const Graduate = ({graduate}) => {
         <div style={{minHeight: "250px"}} className='person-block'>
             <div className="graduate__top">
                 <div className="graduate__img">
-                    <img style={{width: "80%", height: "100%"}} src={`https://www.nstu.ru/${graduate.img}`} alt="" />
+                    <img style={{width: "80%", height: "100%"}} src={imgsrc.includes("undefined") ? user : imgsrc} alt="" />
                 </div>
                 <div className="graduate__info">
                     <div className="graduate__info_field">
@@ -37,7 +40,7 @@ const Graduate = ({graduate}) => {
                     </div> : ''}
                     <div className="graduate__info_field">
                         <div className="field__name">Отзыв</div>  
-                        <div className="field__value"><button onClick={showAll} className="btn-show">показать</button></div>
+                        <div className="field__value"><button onClick={showAll} className="btn-show">{!visible ? "показать" : "скрыть"}</button></div>
                     </div>
                 </div>
             </div>

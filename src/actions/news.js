@@ -4,13 +4,13 @@ import {setNews} from "../reducers/newsReducer.js"
 import { addNewsAction, deleteNewsAction } from '../reducers/newsReducer.js';
 import { updateNewsAction } from '../reducers/newsReducer.js';
 import { syncNewsAction } from '../reducers/newsReducer.js';
+import { API_URL } from '../config.js';
 
 export function getNews() {
     return async dispatch => {
         try {
-            const responce = await axios.get("http://localhost:5000/api/news");
+            const responce = await axios.get(`${API_URL}api/news`);
             dispatch(setNews(responce.data));
-            console.log(responce.data);
         } catch(e) {
             alert(e.responce.data.message);
         }
@@ -20,14 +20,13 @@ export function getNews() {
 export function addNews(news) {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/addNews", {
+            const responce = await axios.post(`${API_URL}api/addNews`, {
                 title: news.title,
                 date: news.date,
                 content: news.content,
                 category: news.category
             });
             dispatch(addNewsAction(responce.data));
-            console.log(responce.data);
         } catch(e) {
             alert(e.responce.data.message);
         }
@@ -37,14 +36,13 @@ export function addNews(news) {
 export function updateNews(news) {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/updateNews", {
+            const responce = await axios.post(`${API_URL}api/updateNews`, {
                 _id: news._id,
                 title: news.title,
                 date: news.date,
                 content: news.content
             });
             dispatch(updateNewsAction(responce.data));
-            console.log(responce.data);
         } catch(e) {
             alert(e.responce.data.message);
         }
@@ -54,7 +52,7 @@ export function updateNews(news) {
 export function syncNews() {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/syncNews");
+            const responce = await axios.post(`${API_URL}api/syncNews`);
             dispatch(syncNewsAction(responce.data));
         } catch(e) {
             alert(e.responce.data.message);
@@ -65,7 +63,7 @@ export function syncNews() {
 export function deleteNews(news) {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/deleteNews", {
+            const responce = await axios.post(`${API_URL}api/deleteNews`, {
                 _id: news._id
             });
             dispatch(deleteNewsAction(responce.data));
@@ -78,7 +76,7 @@ export function deleteNews(news) {
 export function getKeyword() {
     return async dispatch => {
         try {
-            const responce = await axios.get("http://localhost:5000/api/keywords");
+            const responce = await axios.get(`${API_URL}api/keywords`);
             dispatch(setKeywords(responce.data));
         } catch(e) {
             alert(e.responce.data.message);
@@ -91,9 +89,7 @@ export function getKeyword() {
 export function addKeyword(keyword) {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/addKeyword", {
-                _id: keyword._id
-            });
+            const responce = await axios.post(`${API_URL}api/addKeyword`, {keyword});
             dispatch(addKeywordsAction(responce.data));
         } catch(e) {
             alert(e.responce.data.message);
@@ -104,7 +100,7 @@ export function addKeyword(keyword) {
 export function deleteKeyword(keyword) {
     return async dispatch => {
         try {
-            const responce = await axios.post("http://localhost:5000/api/deleteKeyword", {
+            const responce = await axios.post(`${API_URL}api/deleteKeyword`, {
                 _id: keyword._id
             });
             dispatch(deleteKeywordsAction(responce.data));

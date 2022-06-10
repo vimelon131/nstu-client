@@ -5,6 +5,7 @@ import Navbar from './Navbar.jsx';
 import {Icon24LogoVk} from "@vkontakte/icons"
 import yticon from '../../assets/youtube-icon.png'
 import vkicon from "../../assets/iconvk.png"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,7 +13,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__upper">
                     <div className="logo-info">
-                        <img src={logo} alt="" className='logo'/>
+                        <Link to="/"><img src={logo} alt="" className='logo'/></Link>
                         <div className="logo-name"> Магистратура  <span style={{fontWeight:"bold",display:"block"}}>кафедры АСУ</span></div>
                     </div>
                     <div className="contacts">

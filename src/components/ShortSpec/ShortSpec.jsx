@@ -21,7 +21,7 @@ const ShortSpec = ({spec}) => {
                     <div className="short-spec__icon">
                         <AccessTimeIcon/> 
                         <div style={{marginLeft: '5px'}}>
-                            <span className='icon__info'>2 года</span> <span className='icon__info'>4 семетстра</span>
+                            <span className='icon__info'>2 года</span> <span className='icon__info'>4 семестра</span>
                         </div> 
                     </div>
                     <div className="short-spec__icon">
@@ -33,7 +33,7 @@ const ShortSpec = ({spec}) => {
                     <div className="short-spec__icon">
                         <SchoolIcon/>
                         <div style={{marginLeft: '5px'}}>
-                            <span className='icon__info'>Присваиваемая квалификация:</span> <span className='icon__info' style={{fontWeight: '300'}}>магистр прикладной информатики</span>
+                            <span className='icon__info'>Присваиваемая квалификация:</span> <span className='icon__info' style={{fontWeight: '300'}}>магистр</span>
                         </div> 
                     </div>
                     <div className="short-spec__icon">

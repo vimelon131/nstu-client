@@ -1,0 +1,19 @@
+.graduate-list {
+    margin: 20px 20px;
+    text-align: center;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.graduate-list__header {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 2fr;
+}
+
+.graduate__item {
+    align-items: center;
+    margin: 10px 0;
+    border-bottom: solid 2px black;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 2fr;
+}

@@ -9,7 +9,7 @@ const Teacher = ({teacher}) => {
             </div>
             <div className="teacher__bottom">
                 <div className="teacher__img">
-                    <img style={{width: "80%", height: "80%"}} src={teacher.img !== '' ? teacher.img : teacherMissing} alt="" />
+                    <img style={{width: "80%", height: "80%"}} src={!teacher.img.includes('undef') && teacher.img.includes('pic/person') ? teacher.img : teacherMissing} alt="" />
                 </div>
                 <div className="teacher__info">
                     <div className="teacher__job">

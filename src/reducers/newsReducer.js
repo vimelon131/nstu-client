@@ -16,7 +16,7 @@ export default function newsReducer(state = defaultState, action) {
         case ADD_NEWS: return {...state, news: [...state, action.payload]}
         case UPDATE_NEWS: return {
             ...state,
-            news: state.messages.map(n => n._id === action.payload._id ? action.payload : n),
+            news: state.news.map(n => n._id === action.payload._id ? action.payload : n),
         }
         case SYNC_NEWS: return {...state, news: action.payload}
         case DELETE_NEWS: return {...state, news: [state.news.filter(el => el._id !==action.payload._id)]}

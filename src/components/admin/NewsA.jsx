@@ -29,6 +29,7 @@ const NewsA = () => {
             <Link to={"add"}> <button className="btn-action">Добавить</button></Link>
             <button onClick={() => syncNewsHandler()} className="btn-action">Синхронизировать</button>
             <Keywords />
+            <Link to={"addKeyword"}> <button className="btn-action">Добавить</button></Link>
         </div>
     )
 }

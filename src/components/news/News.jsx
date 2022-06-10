@@ -24,7 +24,6 @@ const News = () => {
         <div className='container-main'>
             <div className="content">
                 <p className='page__title'>Новости</p>
-                <Outlet/>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/Z8WVfsyhDhU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 <div className="news_content">
                     {news.map((el, i) => {
