@@ -1,48 +1,50 @@
 import React from 'react'
-import { useParams} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import {useState} from "react";
-import { updateGraduate } from '../../../actions/graduates';
 import { Link } from 'react-router-dom';
-import { updateGraduates } from '../../../actions/graduates';
-import { API_URL } from '../../../config';
 import { addGraduates } from '../../../actions/graduates';
 
 const AddGraduate = () => {
     const dispatch = useDispatch();
     const [graduate, setGraduate] = useState({});
     function addGraduateHandler() {
-        dispatch(addGraduates(graduate));
+        if (!graduate.name || !graduate.graduationDate || !graduate.faculty || !graduate.review) {
+            alert('Все поля должны быть заполнены!');
+        } else {
+            dispatch(addGraduates(graduate));
+            alert('Выпускник добавлен!');
+        } 
     }
 
     return (
         <div className='graduate-edit'>
             <p className='page__title'>Добавление выпускника</p>
             <hr />
-            <div style={{marginBottom: "10px"}} className="edit__title">
-                <label style={{marginRight: "10px"}} htmlFor="title">ФИО</label>
-                <input style={{width: "500px", fontSize: "18px"}} onChange={event => setGraduate({...graduate, name: event.target.value})} id="title" type="text" />
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">ФИО</label></div>  
+                <div className="form__field__value"><input className='field__input' onChange={event => setGraduate({...graduate, name: event.target.value})} id="title" type="text"/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__date">
-                <label style={{marginRight: "10px"}} htmlFor="date">Дата выпуска</label>
-                <input style={{fontSize: "18px"}} id="date" type="text" onChange={event => setGraduate({...graduate, graduationDate: event.target.value})} />
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Дата выпуска</label></div>  
+                <div className="form__field__value"><input className='field__input' onChange={event => setGraduate({...graduate, graduationDate: event.target.value})} id="title" type="text" /></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__category">
-                <label style={{marginRight: "10px"}} htmlFor="categ">Факультет</label>
-                <input style={{fontSize: "18px"}} id="categ" type="text" onChange={event => setGraduate({...graduate, faculty: event.target.value})} />
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Факультет</label></div>  
+                <div className="form__field__value"><input className='field__input' onChange={event => setGraduate({...graduate, faculty: event.target.value})} id="title" type="text"/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__category">
-                <label style={{marginRight: "10px"}} htmlFor="categ">Место работы</label>
-                <input style={{fontSize: "18px"}} id="categ" type="text" onChange={event => setGraduate({...graduate, job: event.target.value})} />
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Место работы</label></div>  
+                <div className="form__field__value"><input className='field__input' onChange={event => setGraduate({...graduate, job: event.target.value})} id="title" type="text"/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__content">
-                <label style={{marginRight: "10px"}} htmlFor="content">Отзыв</label>
-                <textarea style={{fontSize: "18px"}} name="content" id="content" cols="70" rows="20" onChange={event => setGraduate({...graduate, review: event.target.value})}></textarea>
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Отзыв</label></div>  
+                <div className="form__field__value"><textarea className='field__input' name="content" id="content" cols="70" rows="20" onChange={event => setGraduate({...graduate, review: event.target.value})}></textarea> </div>   
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__category">
-                <label style={{marginRight: "10px"}} htmlFor="categ">Фото</label>
-                <input style={{fontSize: "18px"}} id="categ"  type="file" onChange={event => setGraduate({...graduate, file: event.target.files[0]})} />
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Фото</label></div>  
+                <div className="form__field__value"><input type="file" onChange={event => setGraduate({...graduate, file: event.target.files[0]})}/></div>
             </div>
+            
             <button onClick={() => addGraduateHandler()} className="btn-action">Добавить</button>
             <button className="btn-neutral"><Link style={{color: "black", textDecoration: "none"}} to={"../graduates"}> Назад</Link></button> 
         </div>

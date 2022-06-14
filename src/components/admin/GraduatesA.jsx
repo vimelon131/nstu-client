@@ -7,17 +7,19 @@ import { getGraduates } from '../../actions/graduates';
 import { syncGraduates } from '../../actions/graduates';
 import GraduateList from './graduatesList/GraduateList';
 import GradReq from './graduatesList/GradReq';
+import { Oval } from 'react-loader-spinner';
+
 
 
 const GraduatesA = () => {
     const dispatch = useDispatch();
-    const graduates = useSelector(state => state.graduates.graduates);
-    const graduatesReq = useSelector(state => state.graduates.graduates)
-                                    .filter(el => el?.fromSite === true)
+    const isFetching = useSelector(state => state.graduates.isFetching);
+    const graduates = useSelector(state => state.graduates.graduates).filter(el => el?.fromSite === false);
+    const graduatesReq = graduates.filter(el => el?.fromSite === true)
                                     .map(el => <GradReq key={el._id} graduate={el}/>);
     useEffect(() => {
         dispatch(getGraduates());
-    }, [graduates]);
+    }, []);
     function syncGraduatesHandler() {
         dispatch(syncGraduates())
     }
@@ -25,12 +27,13 @@ const GraduatesA = () => {
         <div style={{margin: "20px"}}>
             <p className='page__title'>Управление выпускниками</p>
             <hr />
-            <GraduateList />
+            {isFetching === false ? <GraduateList graduates={graduates}/> : <Oval/>}
+            
             <Link to={"add"}> <button className="btn-action">Добавить</button></Link>
             <button onClick={() => syncGraduatesHandler()} className="btn-action">Синхронизировать</button>
             <p className='page__title'>Запросы на размещение</p>
             <hr />
-            {graduatesReq}
+            {isFetching === false ? graduatesReq : "asd"}
         </div>
     )
 }

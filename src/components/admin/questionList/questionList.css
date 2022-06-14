@@ -3,6 +3,7 @@
     text-align: center;
     max-height: 400px;
     overflow-y: scroll;
+    min-width: 800px;
 }
 
 .question-list__header {

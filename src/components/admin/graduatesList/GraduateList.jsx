@@ -1,10 +1,8 @@
 import React from 'react'
 import "./graduateList.css"
 import GraduateADM from './GraduateADM'
-import { useSelector } from 'react-redux'
 
-const GraduateList = () => {
-    const graduate = useSelector(state => state.graduates.graduates).map(graduate => <GraduateADM key={graduate._id} graduate={graduate}/>)
+const GraduateList = ({graduates}) => {
     return (
         <div className='graduate-list'>
             <div className="graduate-list__header">
@@ -13,7 +11,7 @@ const GraduateList = () => {
                 <div className="graduate-list__category">Кафедра</div>
                 <div className="graduate-list__manage">Управление</div>
             </div>
-            {graduate}
+            {graduates.map(graduate => <GraduateADM key={graduate._id} graduate={graduate}/>)}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteGraduates } from '../../../actions/graduates';
+import { deleteGraduates, getGraduates } from '../../../actions/graduates';
 
 const GraduateADM = ({graduate}) => {
     const dispatch = useDispatch();

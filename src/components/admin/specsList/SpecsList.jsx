@@ -3,8 +3,7 @@ import "./specsList.css"
 import { useSelector } from 'react-redux'
 import Specs from './Specs'
 
-const SpecsList = () => {
-    const specs = useSelector(state => state.spec.specs).map(spec => <Specs key={spec._id} spec={spec}/>)
+const SpecsList = ({specs}) => {
     return (
         <div className='spec-list'>
             <div className="spec-list__header">
@@ -13,7 +12,7 @@ const SpecsList = () => {
                 <div className="spec-list__category">Отображать</div>
                 <div className="spec-list__manage">Управление</div>
             </div>
-            {specs}
+            {specs.map(spec => <Specs key={spec._id} spec={spec}/>)}
         </div>
     )
 }

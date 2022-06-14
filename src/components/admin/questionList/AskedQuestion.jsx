@@ -11,8 +11,11 @@ const AskedQuestion = ({question}) => {
         dispatch(deleteQuestion(question))
     }
     function updateQuestionHandler() {
-        dispatch(updateQuestion({...question, answer: answer, fromSite: false}))
-
+        if (answer !== "") {
+            dispatch(updateQuestion({...question, answer: answer, fromSite: false}))
+        } else {
+            alert("Поле ответ должно быть заполненым");
+        }
     }
     return (
         <div className='news__item'>

@@ -20,18 +20,17 @@ const EditQuestion = () => {
         <div className='news-edit'>
             <p className='page__title'>Редактирование вопроса</p>
             <hr />
-            <div style={{marginBottom: "10px"}} className="edit__title">
-                <label style={{marginRight: "10px"}} htmlFor="title">Вопрос</label>
-                <textarea style={{width: "500px", fontSize: "18px"}} onChange={event => setQuestion({...question, name: event.target.value})} id="title" type="text" value={question.name}/>
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Вопрос</label></div>  
+                <div className="form__field__value"><textarea className='field__input' onChange={event => setQuestion({...question, name: event.target.value})} id="title" type="text" value={question.name}/></div>
             </div>
-        
-            <div style={{marginBottom: "10px"}} className="edit__category">
-                <label style={{marginRight: "10px"}} htmlFor="categ">Ответ</label>
-                <textarea style={{fontSize: "18px"}} id="categ" type="text" onChange={event => setQuestion({...question, answer: event.target.value})} value={question.answer}/>
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Ответ</label></div>  
+                <div className="form__field__value"><textarea className='field__input' id="categ" type="text" onChange={event => setQuestion({...question, answer: event.target.value})} value={question.answer}/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__date">
-                <label style={{marginRight: "10px"}} htmlFor="date">Дата</label>
-                <input style={{fontSize: "18px"}} id="date" type="date" onChange={event => setQuestion({...question, date: event.target.value})} value={question.date.toString().slice(0,10)}/>
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Дата</label></div>  
+                <div className="form__field__value"><input  style={{fontSize: "18px"}} id="date" type="date" onChange={event => setQuestion({...question, date: event.target.value})} value={question.date.toString().slice(0,10)}/></div>
             </div>
             <button onClick={() => updateNewsHandler()} className="btn-action">Сохранить</button>
             <button className="btn-neutral"><Link style={{color: "black", textDecoration: "none"}} to={"../questions"}> Назад</Link></button> 

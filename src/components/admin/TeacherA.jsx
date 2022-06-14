@@ -5,15 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { addTeachersByLink, getTeachers, syncTeachers } from '../../actions/teachers';
 import { useState } from 'react';
+import { Oval } from 'react-loader-spinner';
 
 
 const TeacherA = () => {
     const dispatch = useDispatch();
     const teachers = useSelector(state => state.teachers.teachers);
+    const isFetching = useSelector(state => state.teachers.isFetching);
     const [url, setUrl] = useState('');
     useEffect(() => {
         dispatch(getTeachers());
-    }, [teachers]);
+    }, []);
     function syncNewsHandler() {
         dispatch(syncTeachers())
     }
@@ -24,7 +26,10 @@ const TeacherA = () => {
         <div style={{margin: "20px"}}>
             <p className='page__title'>Управление преподавателями</p>
             <hr />
-            <TeachersList />
+            {isFetching === false 
+            ? <TeachersList teachers={teachers}/>
+            : <Oval/>}
+            
             <Link to={"add"}> <button className="btn-action">Добавить</button></Link>
             <button onClick={() => syncNewsHandler()} className="btn-action">Синхронизировать</button>
             <div>

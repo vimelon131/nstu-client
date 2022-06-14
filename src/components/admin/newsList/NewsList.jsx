@@ -1,10 +1,8 @@
 import React from 'react'
-import "./newsList.css"
 import News from './News'
-import { useSelector } from 'react-redux'
+import "./newsList.css"
 
-const NewsList = () => {
-    const news = useSelector(state => state.news.news).map(news => <News key={news._id} news={news}/>)
+const NewsList = ({news}) => {
     return (
         <div className='news-list'>
             <div className="news-list__header">
@@ -13,7 +11,7 @@ const NewsList = () => {
                 <div className="news-list__category">Категория</div>
                 <div className="news-list__manage">Управление</div>
             </div>
-            {news}
+            {news.map(news => <News key={news._id} news={news}/>)}
         </div>
     )
 }

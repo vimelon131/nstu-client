@@ -14,7 +14,7 @@ export default function keywordsReducer(state = defaultState, action) {
         case ADD_KEYWORDS: 
             return {...state, keywords: [...state, action.payload]}
         case DELETE_KEYWORDS: 
-        return {...state, keywords: [state.keywords.filter(el => el._id !==action.payload._id)]}
+        return {...state, keywords: state.keywords.filter(el => el._id !==action.payload._id)}
         default:
             return state;
     }

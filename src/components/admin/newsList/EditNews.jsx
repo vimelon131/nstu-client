@@ -19,21 +19,21 @@ const EditNews = () => {
         <div className='news-edit'>
             <p className='page__title'>Редактирование новости</p>
             <hr />
-            <div style={{marginBottom: "10px"}} className="edit__title">
-                <label style={{marginRight: "10px"}} htmlFor="title">Заголовок</label>
-                <input style={{width: "500px", fontSize: "18px"}} onChange={event => setNews({...news, title: event.target.value})} id="title" type="text" value={news.title}/>
+            <div className="form__field">
+                <div className="form__field__name"><label className='field__label' htmlFor="title">Заголовок</label></div>  
+                <div className="form__field__value"><input className='field__input' onChange={event => setNews({...news, title: event.target.value})} id="title" type="text" value={news.title}/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__date">
-                <label style={{marginRight: "10px"}} htmlFor="date">Дата</label>
-                <input style={{fontSize: "18px"}} id="date" type="date" onChange={event => setNews({...news, date: event.target.value})} value={news.date.toString().slice(0,10)}/>
+            <div className="graduate__info_field">
+                <div className="form__field__name"><label className='field__label' htmlFor="date">Дата</label></div>  
+                <div className="form__field__value"><input style={{fontSize: "18px"}} id="date" type="date" onChange={event => setNews({...news, date: event.target.value})} value={news.date.toString().slice(0,10)}/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__category">
-                <label style={{marginRight: "10px"}} htmlFor="categ">Категория</label>
-                <input style={{fontSize: "18px"}} id="categ" type="text" onChange={event => setNews({...news, category: event.target.value})} value={news.category}/>
+            <div className="graduate__info_field">
+                <div className="form__field__name"><label className='field__label' htmlFor="categ">Категория</label></div>  
+                <div className="form__field__value"><input className='field__input' id="categ" type="text" onChange={event => setNews({...news, category: event.target.value})} value={news.category}/></div>
             </div>
-            <div style={{marginBottom: "10px"}} className="edit__content">
-                <label style={{marginRight: "10px"}} htmlFor="content">Содержание</label>
-                <textarea style={{fontSize: "18px"}} name="content" id="content" cols="70" rows="20" onChange={event => setNews({...news, content: event.target.value})} value={news.content}></textarea>
+            <div className="graduate__info_field">
+                <div className="form__field__name"> <label className='field__label' htmlFor="content">Содержание</label></div>  
+                <div className="form__field__value"><textarea className='field__input' name="content" id="content" cols="70" rows="20" value={news.content} onChange={event => setNews({...news, content: event.target.value})} ></textarea></div>
             </div>
             <button onClick={() => updateNewsHandler()} className="btn-action">Сохранить</button>
             <button className="btn-neutral"><Link style={{color: "black", textDecoration: "none"}} to={"../news"}> Назад</Link></button> 

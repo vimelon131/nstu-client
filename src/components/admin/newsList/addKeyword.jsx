@@ -8,17 +8,22 @@ const AddKeyword = () => {
     const dispatch = useDispatch();
     const [keyword, setKeyword] = useState("");
     function addKeywordHandler() {
-        dispatch(addKeyword(keyword));
+        if (!keyword) {
+            alert('Все поля должны быть заполнены!');
+        } else {
+            dispatch(addKeyword(keyword));
+            alert('Ключевое слово добавлено!');
+        } 
     }
     return (
         <div>
             <div className='news-edit'>
-                <div className="edit__title">
-                    <label htmlFor="title">Заголовок</label>
-                    <input onChange={event => setKeyword(event.target.value)} id="title" type="text" />
+                <div className="form__field">
+                    <div className="form__field__name"><label className='field__label' htmlFor="title">Ключевое слово</label></div>  
+                    <div className="form__field__value"><input className='field__input' onChange={event => setKeyword(event.target.value)} id="title" type="text"/></div>
                 </div>
                 <button onClick={() => addKeywordHandler()} className="btn-action">Сохранить</button>
-                <Link to={"../news"}> <button className="btn-neutral">Назад</button> </Link>
+                <button className="btn-neutral"><Link style={{color: "black", textDecoration: "none"}} to={"../news"}> Назад</Link></button> 
             </div>
         </div>
     )

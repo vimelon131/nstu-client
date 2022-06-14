@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { addKeywordsAction, deleteKeywordsAction, setKeywords } from '../reducers/keywordsReducer.js';
-import {setNews} from "../reducers/newsReducer.js"
+import {setIsFetching, setNews} from "../reducers/newsReducer.js"
 import { addNewsAction, deleteNewsAction } from '../reducers/newsReducer.js';
 import { updateNewsAction } from '../reducers/newsReducer.js';
 import { syncNewsAction } from '../reducers/newsReducer.js';
@@ -9,6 +9,7 @@ import { API_URL } from '../config.js';
 export function getNews() {
     return async dispatch => {
         try {
+            dispatch(setIsFetching(true));
             const responce = await axios.get(`${API_URL}api/news`);
             dispatch(setNews(responce.data));
         } catch(e) {
@@ -52,6 +53,7 @@ export function updateNews(news) {
 export function syncNews() {
     return async dispatch => {
         try {
+            dispatch(setIsFetching(true));
             const responce = await axios.post(`${API_URL}api/syncNews`);
             dispatch(syncNewsAction(responce.data));
         } catch(e) {
@@ -104,6 +106,7 @@ export function deleteKeyword(keyword) {
                 _id: keyword._id
             });
             dispatch(deleteKeywordsAction(responce.data));
+            console.log("Удалилось");
         } catch(e) {
             alert(e.responce.data.message);
         }
